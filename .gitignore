@@ -1,1 +1,6 @@
 *.sh
+
+
+dist
+build
+__pycache__
