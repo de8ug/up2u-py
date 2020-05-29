@@ -33,6 +33,7 @@ choose = input("""
 print(f'== 你选择的版本是：{latest[int(choose) - 1]}')
 
 print('-->>>开始下载...')
+print('如果下载失败，直接到qq群 829771179 里下载')
 
 name = latest[int(choose) - 1]
 if not os.path.exists(name):
@@ -41,34 +42,35 @@ if not os.path.exists(name):
 
 print('下载完成!')
 
-# TODO： 如果下载失败，直接到qq群里下载
 
+# check windows
 WINDOWS = sys.platform.startswith("win") or (sys.platform == "cli" and os.name == "nt")
 
 install = input('>> 是否开始安装（y/n）？')
 if install.lower() == 'y':
     if not WINDOWS:
         print(f'执行命令：sh {name}')  # for *nix
-        # os.system(f'sh {name}')
-    # TODO: for windows
+        os.system(f'sh {name}')
+    # for windows
     else:
         print(f'start {name}')
         os.system(f'start {name}')
+        input("""弹出安装窗口，
+            点击【next】，
+            到达选择路径时，
+            不要修改！不要修改！不要修改
+            默认安装位置在c盘
+
+            在【Install】按钮页面，一定要先
+            勾选【Add Miniconda to PATH...】
+            点击【Install】完成安装
+
+            安装完成后，回到这里，点击【回车】继续
+            """)
 else:
     print('下次再说')
 
-input("""弹出安装窗口，
-点击【next】，
-到达选择路径时，
-不要修改！不要修改！不要修改
-默认安装位置在c盘
 
-在【Install】按钮页面，一定要先
-勾选【Add Miniconda to PATH...】
-点击【Install】完成安装
-
-安装完成后，回到这里，点击【回车】继续
-""")
 print('开始自动安装jupyter')
 os.system('pip install jupyter -i https://pypi.tuna.tsinghua.edu.cn/simple')
 

@@ -3,7 +3,8 @@ import os
 
 cmd_list = ['jupyter notebook',
 'python(退出时输入 exit() )',
-'python+文件'
+'python+文件',
+'安装python第三方代码库'
 ]
 
 for index, cmd in enumerate(cmd_list):
@@ -20,5 +21,8 @@ elif index == 2:
     py_file = input('直接把Python代码文件拖到当前控制台(然后按回车)\n')
     print(f'python {py_file}')
     os.system(f'python {py_file}')
+elif index == 3:
+    name = input('输入代码库名字，按回车：')
+    os.system(f'pip install -i https://pypi.tuna.tsinghua.edu.cn/simple {name}')
 else:
     os.system(cmd_list[index])
