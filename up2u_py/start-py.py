@@ -1,3 +1,9 @@
+# start-py.py
+# python运行程序
+# @author: DE8UG
+# @公众号：Python随身听
+# @官网：https://de8ug.vip/
+# 
 import os  
 
 

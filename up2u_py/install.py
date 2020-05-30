@@ -1,3 +1,9 @@
+# install.py
+# python安装文件下载程序，配置jupyter
+# @author: DE8UG
+# @公众号：Python随身听
+# @官网：https://de8ug.vip/
+
 import os
 import sys
 import requests
