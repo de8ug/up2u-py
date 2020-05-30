@@ -51,27 +51,31 @@ if install.lower() == 'y':
     if not WINDOWS:
         print(f'执行命令：sh {name}')  # for *nix
         os.system(f'sh {name}')
+        print('请按相关提示完成安装（大部分是输入y或者回车）')
     # for windows
     else:
         print(f'start {name}')
         os.system(f'start {name}')
         input("""弹出安装窗口，
             点击【next】，
-            到达选择路径时，
-            不要修改！不要修改！不要修改
-            默认安装位置在c盘
+            到达选择安装路径时，
+            路径不要有中文，不要中文，不要中文！
+            默认安装位置在c盘,
+            如果提示权限问题，可选择到D盘等
 
             在【Install】按钮页面，一定要先
-            勾选【Add Miniconda to PATH...】
+            【✔】勾选【Add Miniconda to PATH...】
             点击【Install】完成安装
 
+            最后一个安装界面，提示要不要打开两个文档，取消勾选
+            【✔】->>> 【 】
+            【✔】->>> 【 】
             安装完成后，回到这里，点击【回车】继续
             """)
+    print('开始自动安装jupyter')
+    os.system('pip install jupyter -i https://pypi.tuna.tsinghua.edu.cn/simple')
 else:
     print('下次再说')
 
-
-print('开始自动安装jupyter')
-os.system('pip install jupyter -i https://pypi.tuna.tsinghua.edu.cn/simple')
-
 print('----现在去打开 start-py 程序，开始写代码----')
+input('任意键退出')

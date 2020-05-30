@@ -26,3 +26,5 @@ elif index == 3:
     os.system(f'pip install -i https://pypi.tuna.tsinghua.edu.cn/simple {name}')
 else:
     os.system(cmd_list[index])
+
+input('任意键退出')

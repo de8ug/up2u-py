@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['start-py.py'],
+a = Analysis(['install.py'],
              pathex=['/Users/howie/code/up2u-py/up2u_py'],
              binaries=[],
              datas=[],
@@ -21,7 +21,7 @@ exe = EXE(pyz,
           a.scripts,
           [],
           exclude_binaries=True,
-          name='start-py',
+          name='install',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
@@ -34,8 +34,8 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='start-py')
+               name='install')
 app = BUNDLE(coll,
-             name='start-py.app',
+             name='install.app',
              icon=None,
              bundle_identifier=None)
